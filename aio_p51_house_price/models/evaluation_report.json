@@ -1,0 +1,135 @@
+{
+    "timestamp": "2025-11-01T15:22:39.439163",
+    "config": {
+        "imputer_type": "iterative",
+        "skewed_transform": "box-cox",
+        "winsorize_lower": 0.01,
+        "winsorize_upper": 0.99,
+        "cv_folds": 5,
+        "random_state": 42
+    },
+    "preprocessor": {
+        "type": "DataPreprocessor",
+        "target_cols": [
+            "SalePrice"
+        ],
+        "skewed_transform": "box-cox"
+    },
+    "models": {
+        "xgboost_fast": {
+            "params": {
+                "n_estimators": 1000,
+                "learning_rate": 0.03,
+                "max_depth": 3
+            },
+            "metrics": {
+                "Train_RMSE": 14632.849490311977,
+                "Train_MAE": 9389.713812785378,
+                "Train_R2": 0.9647332258467679,
+                "Val_RMSE": 24535.185923839224,
+                "Val_MAE": 15290.404366438383,
+                "Val_R2": 0.9140686950683016,
+                "Time": 0.6559479236602783
+            }
+        },
+        "xgboost_random": {
+            "params": {
+                "colsample_bytree": 0.8570351922786027,
+                "learning_rate": 0.02798695128633439,
+                "max_depth": 3,
+                "n_estimators": 743,
+                "reg_lambda": 7.146901982034297,
+                "subsample": 0.7092900825439995
+            },
+            "metrics": {
+                "Train_RMSE": 15329.495769683634,
+                "Train_MAE": 9601.212303795648,
+                "Train_R2": 0.9612953035897953,
+                "Val_RMSE": 25163.367912086436,
+                "Val_MAE": 15481.64015410962,
+                "Val_R2": 0.909612112763594,
+                "Time": 19.93577480316162
+            }
+        },
+        "ridge_poly": {
+            "params": {
+                "alpha": 30.07882518043102
+            },
+            "metrics": {
+                "Train_RMSE": 20597.10098172458,
+                "Train_MAE": 12443.144727476365,
+                "Train_R2": 0.9301252733537528,
+                "Val_RMSE": 25424.571060354378,
+                "Val_MAE": 15591.806823001349,
+                "Val_R2": 0.9077258677992015,
+                "Time": 9.763442039489746
+            }
+        },
+        "ridge": {
+            "params": {
+                "alpha": 4.961947603002898
+            },
+            "metrics": {
+                "Train_RMSE": 28345.170360442036,
+                "Train_MAE": 15871.060218996576,
+                "Train_R2": 0.8676676367035853,
+                "Val_RMSE": 28290.217096933666,
+                "Val_MAE": 16709.45017048619,
+                "Val_R2": 0.8857528800782349,
+                "Time": 3.3370440006256104
+            }
+        },
+        "linear": {
+            "params": {},
+            "metrics": {
+                "Train_RMSE": 27939.09741498705,
+                "Train_MAE": 15552.033988527864,
+                "Train_R2": 0.8714320647609176,
+                "Val_RMSE": 29339.20717678872,
+                "Val_MAE": 17164.138434331737,
+                "Val_R2": 0.877123325847404,
+                "Time": 0.011296987533569336
+            }
+        },
+        "lasso": {
+            "params": {
+                "alpha": 0.0013503140378698722
+            },
+            "metrics": {
+                "Train_RMSE": 28366.727481232723,
+                "Train_MAE": 15832.773417305069,
+                "Train_R2": 0.8674662768616143,
+                "Val_RMSE": 29816.42336551414,
+                "Val_MAE": 17039.723798000377,
+                "Val_R2": 0.8730935215463904,
+                "Time": 0.47621583938598633
+            }
+        },
+        "lasso_poly": {
+            "params": {
+                "alpha": 0.01
+            },
+            "metrics": {
+                "Train_RMSE": 28819.787409773726,
+                "Train_MAE": 16811.98719141467,
+                "Train_R2": 0.8631989372427047,
+                "Val_RMSE": 31268.453029622302,
+                "Val_MAE": 17872.855156201866,
+                "Val_R2": 0.860432116904364,
+                "Time": 15.467057228088379
+            }
+        },
+        "linear_poly": {
+            "params": {},
+            "metrics": {
+                "Train_RMSE": 1.1657892214759121e-09,
+                "Train_MAE": 7.448520736777347e-10,
+                "Train_R2": 1.0,
+                "Val_RMSE": 39586.33009054587,
+                "Val_MAE": 26709.38444721288,
+                "Val_R2": 0.7763014424732121,
+                "Time": 0.6495091915130615
+            }
+        }
+    }
+}
